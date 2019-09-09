@@ -4,7 +4,7 @@ trigger:
 pool:
   vmImage: 'vs2017-win2016'
 variables:
-  SNYK_TOKEN: 
+  SNYK_TOKEN: '3e74cf14-a819-4424-9652-aee1fb06348b'
 
   
 steps:
