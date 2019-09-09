@@ -1,0 +1,6 @@
+C:\dev\OneWayServiceExample\OneWayServiceExample.Server\bin\Debug\OneWayServiceExample.Server.exe.config
+C:\dev\OneWayServiceExample\OneWayServiceExample.Server\bin\Debug\OneWayServiceExample.Server.exe
+C:\dev\OneWayServiceExample\OneWayServiceExample.Server\bin\Debug\OneWayServiceExample.Server.pdb
+C:\dev\OneWayServiceExample\OneWayServiceExample.Server\obj\Debug\OneWayServiceExample.Server.csprojResolveAssemblyReference.cache
+C:\dev\OneWayServiceExample\OneWayServiceExample.Server\obj\Debug\OneWayServiceExample.Server.exe
+C:\dev\OneWayServiceExample\OneWayServiceExample.Server\obj\Debug\OneWayServiceExample.Server.pdb

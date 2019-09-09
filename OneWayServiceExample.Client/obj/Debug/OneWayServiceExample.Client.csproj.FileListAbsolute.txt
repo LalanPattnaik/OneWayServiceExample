@@ -1,0 +1,5 @@
+C:\dev\OneWayServiceExample\OneWayServiceExample.Client\bin\Debug\OneWayServiceExample.Client.exe.config
+C:\dev\OneWayServiceExample\OneWayServiceExample.Client\bin\Debug\OneWayServiceExample.Client.exe
+C:\dev\OneWayServiceExample\OneWayServiceExample.Client\bin\Debug\OneWayServiceExample.Client.pdb
+C:\dev\OneWayServiceExample\OneWayServiceExample.Client\obj\Debug\OneWayServiceExample.Client.exe
+C:\dev\OneWayServiceExample\OneWayServiceExample.Client\obj\Debug\OneWayServiceExample.Client.pdb
