@@ -12,6 +12,12 @@ pool:
   
 steps:
 
+  - task: NuGetCommand@2
+    inputs:
+      command: 'restore'
+      restoreSolution: '**/*.sln'
+      feedsToUse: 'select'
+
   - task: DotNetCoreCLI@2
     inputs:
       command: build
@@ -36,8 +42,17 @@ steps:
         #**/vendor/vendor.json
         #**/obj/project.assets.json
         #packages.config
-        **/app.config
         #composer.lock
+        **/app.config
+        **project.json
+        *.csproj
+        *.vbproj
+        *.fsproj
+        **/packages.config
+        **/obj/project.assets.json
+        *.sln
+        *.config
+        *.json
         
         #!**/node_modules/**/*
       protect: false
