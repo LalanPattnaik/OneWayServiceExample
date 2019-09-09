@@ -9,7 +9,7 @@ jobs:
     inputs:
       command: custom
       verbose: false
-      customCommand: 'sudo install -g snyk'
+      customCommand: 'npm install -g snyk'
 
   - script: |
       snyk auth $(SNYK_TOKEN)
