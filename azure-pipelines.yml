@@ -1,15 +1,18 @@
-name: $(Date:yyyy.MM.dd).$(Rev:r)
-variables:
-  SNYK_TOKEN: 
-jobs:
-- job:
-  steps:
+trigger:
+- master
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+steps:
+
+
   - task: Npm@1
     displayName: 'Install Snyk.io'
     inputs:
-      command: custom
+      command: 'custom'
       verbose: false
-      customCommand: 'npm install -g snyk'
+      customCommand: 'install -g snyk'
 
   - script: |
       snyk auth $(SNYK_TOKEN)
