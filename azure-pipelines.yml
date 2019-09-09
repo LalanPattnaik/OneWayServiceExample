@@ -19,32 +19,33 @@ steps:
 
   - task: Snyk@2
     inputs:
-     multiFile: true
-     files: |
-       #yarn.lock
-       #package.json
-       #package-lock.json
-       #Gemfile
-       #Gemfile.lock
-       #pom.xml
-       #Pipfile
-       #requirements.txt
-       #build.gradle
-       #build.gradle.kts
-       #build.sbt
-       #Gopkg.lock
-       #**/vendor/vendor.json
-       #**/obj/project.assets.json
-       #packages.config
-       #composer.lock
-       #**/app.config
-       
-       #!**/node_modules/**/*
-     protect: false
-     test: true
-     monitor: false
-     authType: 'token'
-     token: '$(Snyk.Token)'
-     failBuild: false
-     dev: false
-     trustPolicies: false
+      multiFile: true
+      files: |
+        #yarn.lock
+        #package.json
+        #package-lock.json
+        #Gemfile
+        #Gemfile.lock
+        #pom.xml
+        #Pipfile
+        #requirements.txt
+        #build.gradle
+        #build.gradle.kts
+        #build.sbt
+        #Gopkg.lock
+        #**/vendor/vendor.json
+        #**/obj/project.assets.json
+        #packages.config
+        #composer.lock
+        #**/app.config
+        
+        #!**/node_modules/**/*
+      protect: false
+      test: true
+      monitor: false
+      authType: 'token'
+      token: '3e74cf14-a819-4424-9652-aee1fb06348b'
+      failBuild: false
+      dev: false
+      trustPolicies: false
+      org: 'amrityam'
