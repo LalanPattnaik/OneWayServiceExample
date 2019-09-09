@@ -45,9 +45,6 @@ steps:
         #composer.lock
         **/app.config
         **project.json
-        #*.csproj
-        #*.vbproj
-        *.fsproj
         **/packages.config
         **/obj/project.assets.json
         *.sln
