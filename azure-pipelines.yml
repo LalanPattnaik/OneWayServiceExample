@@ -35,7 +35,8 @@ steps:
         #Gopkg.lock
         #**/vendor/vendor.json
         #**/obj/project.assets.json
-        **/package.config
+        #packages.config
+        **/app.config
         #composer.lock
         
         #!**/node_modules/**/*
@@ -45,6 +46,7 @@ steps:
       authType: 'token'
       token: '3e74cf14-a819-4424-9652-aee1fb06348b'
       failBuild: false
-      dev: false
+      dev: true
       trustPolicies: false
       org: 'amrityam'
+      args: 'snyk --version'
