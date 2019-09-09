@@ -1,33 +1,50 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
 trigger:
 - master
 
 pool:
-  vmImage: 'vs2017-win2016'
-variables:
-  SNYK_TOKEN: '3e74cf14-a819-4424-9652-aee1fb06348b'
+  vmImage: 'ubuntu-latest'
 
   
 steps:
-
-
-  - task: Npm@1
-    displayName: 'Install Snyk.io'
-    inputs:
-      command: 'custom'
-      verbose: false
-      customCommand: 'install -g snyk'
-
-  - script: |
-      snyk auth $(SNYK_TOKEN)
-      snyk test
-    displayName: 'Scan dependencies for vulnerabilities with Snyk'
-
-  - script: |
-      snyk monitor
-    displayName: 'Setup dependency vulnerability monitoring with Snyk'
-
 
   - task: DotNetCoreCLI@2
     inputs:
       command: build
       arguments: -p:Version=$(Build.BuildNumber)
+
+  - task: Snyk@2
+    inputs:
+     multiFile: true
+     files: |
+       #yarn.lock
+       #package.json
+       #package-lock.json
+       #Gemfile
+       #Gemfile.lock
+       #pom.xml
+       #Pipfile
+       #requirements.txt
+       #build.gradle
+       #build.gradle.kts
+       #build.sbt
+       #Gopkg.lock
+       #**/vendor/vendor.json
+       #**/obj/project.assets.json
+       #packages.config
+       #composer.lock
+       #**/app.config
+       
+       #!**/node_modules/**/*
+     protect: false
+     test: true
+     monitor: false
+     authType: 'token'
+     token: '$(Snyk.Token)'
+     failBuild: false
+     dev: false
+     trustPolicies: false
