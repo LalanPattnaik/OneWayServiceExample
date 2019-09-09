@@ -27,8 +27,8 @@ steps:
     inputs:
       multiFile: true
       files: |
-        #yarn.lock
-        #package.json
+        yarn.lock
+        package.json
         #package-lock.json
         #Gemfile
         #Gemfile.lock
@@ -43,13 +43,7 @@ steps:
         #**/obj/project.assets.json
         #packages.config
         #composer.lock
-        **/app.config
-        **project.json
-        **/packages.config
-        **/obj/project.assets.json
-        *.sln
-        *.config
-        *.json
+        
         
         #!**/node_modules/**/*
       protect: false
