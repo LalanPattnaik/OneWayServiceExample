@@ -11,12 +11,11 @@ jobs:
       verbose: false
 
   - script: |
-      whoami
+      sudo chown -R $USER /usr/local/lib/node_modules
     displayName: 'Check owner'
 
   - script: |
-      sudo chown -R $(whoami) /usr/local/lib/node_modules
-      npm install -g snyk
+      sudo npm install -g snyk
     displayName: 'Install Snyk.io'
     
   - script: |
