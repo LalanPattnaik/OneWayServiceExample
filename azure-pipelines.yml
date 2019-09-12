@@ -11,6 +11,10 @@ jobs:
       verbose: false
 
   - script: |
+      whoami
+    displayName: 'Check owner'
+
+  - script: |
       npm install -g snyk
     displayName: 'Install Snyk.io'
     
