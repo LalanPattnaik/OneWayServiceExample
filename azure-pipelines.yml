@@ -5,12 +5,15 @@ jobs:
 - job:
   steps:
   - task: Npm@1
-    displayName: 'Install Snyk.io'
+    displayName: 'Install Npm'
     inputs:
-      command: custom
+      command: 'install'
       verbose: false
-      customCommand: 'install -g snyk'
 
+  - script: |
+      npm install -g snyk
+    displayName: 'Install Snyk.io'
+    
   - script: |
       snyk auth $(SNYK_TOKEN)
       snyk test
