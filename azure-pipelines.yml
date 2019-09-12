@@ -22,14 +22,17 @@ jobs:
 
   - script: |
       npm install -g snyk
-    displayName: 'Install Snyk.io'
-    
+    displayName: 'Install Snyk.io through Npm'
+
   - script: |
       snyk auth $(SNYK_TOKEN)
+    displayName: 'Establishing Authentication for Snyk'  
+    
+  - script: |
       snyk test
     displayName: 'Scan dependencies for vulnerabilities with Snyk'
 
   - script: |
       snyk monitor
-    displayName: 'Setup dependency vulnerability monitoring with Snyk'
+    displayName: 'Publish vulnerability to Snyk Dashboard'
 
