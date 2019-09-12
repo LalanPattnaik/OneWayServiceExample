@@ -3,23 +3,18 @@ variables:
   SNYK_TOKEN: 3e74cf14-a819-4424-9652-aee1fb06348b
 jobs:
 - job:
+  pool:
+    vmImage: 'vs2017-win2016'
+
   steps:
   - task: Npm@1
     displayName: 'Install Npm'
     inputs:
       command: 'install'
-      verbose: false
+      verbose: false 
 
   - script: |
-      sudo chown -R $USER /usr/local/lib/node_modules
-    displayName: 'Give permission to user for node_modules'
-
-  - script: |
-      sudo chown -R $USER /home/vsts
-    displayName: 'Give permission to user for home/vsts' 
-
-  - script: |
-      sudo npm install -g snyk
+      npm install -g snyk
     displayName: 'Install Snyk.io'
     
   - script: |
