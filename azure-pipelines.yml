@@ -12,7 +12,8 @@ jobs:
 
   - script: |
       sudo chown -R $USER /usr/local/lib/node_modules
-    displayName: 'Check owner'
+      sudo chown -R $USER /home/vsts
+    displayName: 'Give permission to user'
 
   - script: |
       sudo npm install -g snyk
