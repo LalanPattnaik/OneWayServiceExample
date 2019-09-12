@@ -29,11 +29,11 @@ jobs:
     displayName: 'Establishing Authentication for Snyk'  
     
   - script: |
-      snyk test -d
-    continueOnError: true 
+      snyk test -d 
     displayName: 'Scan dependencies for vulnerabilities with Snyk'
 
   - script: |
       snyk monitor
+      condition: and(always(), eq(variables['Build.Reason'], 'Schedule'))
     displayName: 'Publish vulnerability to Snyk Dashboard'
 
