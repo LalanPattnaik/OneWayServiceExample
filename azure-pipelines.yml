@@ -29,7 +29,7 @@ jobs:
     displayName: 'Establishing Authentication for Snyk'  
     
   - script: |
-      snyk test
+      snyk test -d
     displayName: 'Scan dependencies for vulnerabilities with Snyk'
 
   - script: |
