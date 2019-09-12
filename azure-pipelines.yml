@@ -7,6 +7,13 @@ jobs:
     vmImage: 'vs2017-win2016'
 
   steps:
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Building Project'
+    inputs:
+      command: build
+      arguments: -p:Version=$(Build.BuildNumber)
+
   - task: Npm@1
     displayName: 'Install Npm'
     inputs:
@@ -26,8 +33,3 @@ jobs:
       snyk monitor
     displayName: 'Setup dependency vulnerability monitoring with Snyk'
 
-
-  - task: DotNetCoreCLI@2
-    inputs:
-      command: build
-      arguments: -p:Version=$(Build.BuildNumber)
