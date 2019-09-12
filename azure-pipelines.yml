@@ -30,6 +30,7 @@ jobs:
     
   - script: |
       snyk test -d
+    continueOnError: true 
     displayName: 'Scan dependencies for vulnerabilities with Snyk'
 
   - script: |
