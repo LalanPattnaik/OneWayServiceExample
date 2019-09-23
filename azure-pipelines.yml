@@ -27,13 +27,9 @@ jobs:
   - script: |
       snyk auth $(SNYK_TOKEN)
     displayName: 'Establishing Authentication for Snyk'  
-    
-  - script: |
-      snyk test -d 
-    displayName: 'Scan dependencies for vulnerabilities with Snyk'
+
 
   - script: |
       snyk monitor
-      condition: and(always(), eq(variables['Build.Reason'], 'Schedule'))
     displayName: 'Publish vulnerability to Snyk Dashboard'
 
