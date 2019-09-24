@@ -19,7 +19,7 @@ jobs:
       multiFile: true
       files: |
         #yarn.lock
-        #package.json
+        package.json
         #package-lock.json
         #Gemfile
         #Gemfile.lock
