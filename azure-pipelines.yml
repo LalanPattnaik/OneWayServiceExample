@@ -1,6 +1,6 @@
 name: $(Date:yyyy.MM.dd).$(Rev:r)
 variables:
-  SNYK_TOKEN: 3e74cf14-a819-4424-9652-aee1fb06348b
+  SNYK_TOKEN: c5392243-a958-484e-8a5e-0643e468c35a
 jobs:
 - job:
   pool:
@@ -30,6 +30,6 @@ jobs:
 
 
   - script: |
-      snyk monitor
+      snyk test
     displayName: 'Publish vulnerability to Snyk Dashboard'
 
