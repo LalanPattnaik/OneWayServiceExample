@@ -8,6 +8,12 @@ jobs:
 
   steps:
 
+  - task: Npm@1
+    displayName: 'Install Npm'
+    inputs:
+      command: 'install'
+      verbose: false 
+
   - task: DotNetCoreCLI@2
     displayName: 'Building Project'
     inputs:
