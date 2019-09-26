@@ -12,7 +12,12 @@ jobs:
     displayName: 'Use .NET Core sdk'
     inputs:
       packageType: 'sdk'
-      version: 
+      version: 3.0
+
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'custom'
+      custom: 'help'
 
   - task: DotNetCoreCLI@2
     inputs:
