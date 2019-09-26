@@ -23,8 +23,8 @@ jobs:
   - task: CodeAnalysis@1
     inputs:
       ruleset: 'All Rules'
-      buildDirectory: 'demo'
-      fileList: '*'
-      outputFile: 'output'
+      buildDirectory: '$(build.sourcesDirectory)\Demo\Example\bin'
+      fileList: 'LalanPattnaik/OneWayServiceExample/'
+      outputFile: '$(build.sourcesDirectory)\Demo\Example\bin\codeanalysisresult.html'
       includeSummary: true
       logging: false
