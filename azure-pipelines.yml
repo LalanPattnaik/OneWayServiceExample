@@ -8,23 +8,10 @@ jobs:
 
   steps:
 
-  - task: Npm@1
-    displayName: 'Install Npm'
+  - task: NuGetToolInstaller@1
     inputs:
-      command: 'install'
-      verbose: false 
-
-  - task: DotNetCoreCLI@2
-    displayName: 'Building Project'
+      versionSpec: 
+  - task: NuGetCommand@2
     inputs:
-      command: build
-      arguments: -p:Version=$(Build.BuildNumber)
-
-  - task: CodeAnalysis@1
-    inputs:
-      ruleset: 'All Rules'
-      buildDirectory: '$(build.sourcesDirectory)\Demo\Example\bin'
-      fileList: 'LalanPattnaik/OneWayServiceExample/'
-      outputFile: '$(build.sourcesDirectory)\Demo\Example\bin\codeanalysisresult.html'
-      includeSummary: true
-      logging: false
+      command: 'custom'
+      arguments: 'nuget help'
