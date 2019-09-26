@@ -14,4 +14,4 @@ jobs:
   - task: NuGetCommand@2
     inputs:
       command: 'custom'
-      arguments: 'nuget help'
+      arguments: 'help'
