@@ -12,14 +12,37 @@ jobs:
     displayName: 'Use .NET Core sdk'
     inputs:
       packageType: 'sdk'
-      version: 3.0
+      version: 
 
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
       custom: 'help'
 
+  
+  - task: DotNetCoreCLI@2
+    inputs:
+        command: 'custom'
+        custom: 'add package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.4'
+
+  - task: DotNetCoreCLI@2
+    inputs:
+        command: 'custom'
+        custom: 'add package Microsoft.CodeQuality.Analyzers --version 2.9.4'
+
+  - task: DotNetCoreCLI@2
+    inputs:
+        command: 'custom'
+        custom: 'add package Microsoft.NetCore.Analyzers --version 2.9.4'
+
+  - task: DotNetCoreCLI@2
+    inputs:
+        command: 'custom'
+        custom: 'add package Microsoft.NetFramework.Analyzers --version 2.9.4'
+
+
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
       custom: 'add package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2.9.4'
+
