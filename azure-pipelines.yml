@@ -20,33 +20,11 @@ jobs:
       command: build
       arguments: -p:Version=$(Build.BuildNumber)
 
-  - task: Snyk@2
+  - task: CodeAnalysis@1
     inputs:
-      multiFile: true
-      files: |
-        #yarn.lock
-        package.json
-        #package-lock.json
-        #Gemfile
-        #Gemfile.lock
-        #pom.xml
-        #Pipfile
-        #requirements.txt
-        #build.gradle
-        #build.gradle.kts
-        #build.sbt
-        #Gopkg.lock
-        #**/vendor/vendor.json
-        #**/obj/project.assets.json
-        #packages.config
-        #composer.lock
-        
-        #!**/node_modules/**/*
-      protect: false
-      test: true
-      monitor: false
-      authType: 'token'
-      token: 'c5392243-a958-484e-8a5e-0643e468c35a'
-      failBuild: true
-      dev: false
-      trustPolicies: false
+      ruleset: 'All Rules'
+      buildDirectory: 'demo'
+      fileList: '*'
+      outputFile: 'output'
+      includeSummary: true
+      logging: false
