@@ -8,10 +8,7 @@ jobs:
 
   steps:
 
-  - task: NuGetToolInstaller@1
-    inputs:
-      versionSpec: 
-  - task: NuGetCommand@2
+  - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
-      arguments: 'help'
+      custom: 'dotnet add package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2.9.4'
