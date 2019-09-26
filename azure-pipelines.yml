@@ -8,7 +8,13 @@ jobs:
 
   steps:
 
+  - task: UseDotNet@2
+    displayName: 'Use .NET Core sdk'
+    inputs:
+      packageType: 'sdk'
+      version: 
+
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
-      custom: 'dotnet add package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2.9.4'
+      custom: '-h'
