@@ -17,4 +17,4 @@ jobs:
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
-      custom: '-h'
+      custom: 'add package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2.9.4'
