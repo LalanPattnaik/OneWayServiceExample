@@ -23,7 +23,7 @@ jobs:
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
-      custom: 'ef'
+      custom: 'ef database'
   
   - task: DotNetCoreCLI@2
     inputs:
