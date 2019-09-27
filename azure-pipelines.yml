@@ -1,6 +1,4 @@
 name: $(Date:yyyy.MM.dd).$(Rev:r)
-variables:
-  SNYK_TOKEN: c5392243-a958-484e-8a5e-0643e468c35a
 jobs:
 - job:
   pool:
@@ -23,18 +21,12 @@ jobs:
     inputs:
       command: 'custom'
       custom: ' --list-sdks'
-
-  - task: DotNetCoreCLI@2
-    inputs:
-      command: 'custom'
-      custom: 'new'
-      arguments: '"Console Application"'
   
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
       custom: 'add'
-      arguments: '$(build.sourcesDirectory) package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.4'
+      arguments: '$(build.sourcesDirectory)/OneWayServiceExample.Server package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.4'
 
   - task: DotNetCoreCLI@2
     inputs:
