@@ -5,7 +5,11 @@ jobs:
     vmImage: 'vs2017-win2016'
 
   steps:
-
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'build'
+      projects: 'D:\\a\\1\\s\\OneWayServiceExample.Server'
+      
   - task: UseDotNet@2
     displayName: 'Use .NET Core sdk'
     inputs:
