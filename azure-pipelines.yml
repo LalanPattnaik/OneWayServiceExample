@@ -20,13 +20,14 @@ jobs:
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
-      custom: ' --list-sdks'
+      custom: 'new'
+      arguments: '"Console Application"'
   
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
       custom: 'add'
-      arguments: '$(build.sourcesDirectory)/OneWayServiceExample.Server package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.4'
+      arguments: '$(build.sourcesDirectory) package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.4'
 
   - task: DotNetCoreCLI@2
     inputs:
@@ -51,4 +52,12 @@ jobs:
     inputs:
       command: 'custom'
       custom: 'add'
-      arguments: '$(build.sourcesDirectory) package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2.9.4'
+      arguments: 'package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2.9.4'
+
+  - task: CodeAnalysis@1
+    inputs:
+      ruleset: 'All Rules'
+      buildDirectory: '$(build.sourcesDirectory)'
+      outputFile: '$(build.sourcesDirectory)\codeanalysisresult.html'
+      includeSummary: true
+      logging: falsep
