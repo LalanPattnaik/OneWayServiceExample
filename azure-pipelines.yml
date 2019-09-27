@@ -27,7 +27,7 @@ jobs:
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
-      custom: 'add --help'
+      custom: 'add'
   
   - task: DotNetCoreCLI@2
     inputs:
