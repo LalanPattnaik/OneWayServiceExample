@@ -19,35 +19,17 @@ jobs:
       command: 'custom'
       custom: 'help'
 
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'custom'
+      custom: ' --list-sdks'
 
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
-      custom: 'ef'
+      custom: 'add --help'
   
   - task: DotNetCoreCLI@2
     inputs:
         command: 'custom'
         custom: 'add package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.4'
-
-  - task: DotNetCoreCLI@2
-    inputs:
-        command: 'custom'
-        custom: 'add package Microsoft.CodeQuality.Analyzers --version 2.9.4'
-
-  - task: DotNetCoreCLI@2
-    inputs:
-        command: 'custom'
-        custom: 'add package Microsoft.NetCore.Analyzers --version 2.9.4'
-
-  - task: DotNetCoreCLI@2
-    inputs:
-        command: 'custom'
-        custom: 'add package Microsoft.NetFramework.Analyzers --version 2.9.4'
-
-
-  - task: DotNetCoreCLI@2
-    inputs:
-      command: 'custom'
-      custom: 'add package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2.9.4'
-
