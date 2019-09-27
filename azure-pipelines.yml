@@ -34,4 +34,4 @@ jobs:
     inputs:
       command: 'custom'
       custom: 'add'
-      arguments: 'package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.4'
+      arguments: '$(build.sourcesDirectory) package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.4'
