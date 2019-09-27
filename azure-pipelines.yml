@@ -18,11 +18,10 @@ jobs:
       command: 'build'
       projects: 'D:\\a\\1\\s\\OneWayServiceExample.Server'
   
-  - task: DotNetCoreCLI@2
+  - task: PowerShell@2
     inputs:
-      command: 'custom'
-      custom: 'add'
-      arguments: '$(build.sourcesDirectory)\\OneWayServiceExample.Server package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.3'
+      targetType: 'inline'
+      script: 'Install-Package Microsoft.CodeAnalysis.FxCopAnalyzers -Version 2.9.3'
 
   - task: DotNetCoreCLI@2
     inputs:
