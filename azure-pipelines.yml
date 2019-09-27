@@ -58,6 +58,7 @@ jobs:
     inputs:
       ruleset: 'All Rules'
       buildDirectory: '$(build.sourcesDirectory)'
+      fileList: '$(build.sourcesDirectory)'
       outputFile: '$(build.sourcesDirectory)\codeanalysisresult.html'
       includeSummary: true
       logging: falsep
