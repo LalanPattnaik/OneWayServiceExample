@@ -22,13 +22,13 @@ jobs:
     inputs:
       command: 'custom'
       custom: 'add'
-      arguments: '$(build.sourcesDirectory) package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.3'
+      arguments: '$(build.sourcesDirectory)\\OneWayServiceExample.Server package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.3'
 
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
       custom: 'add'
-      arguments: '$(build.sourcesDirectory) package Microsoft.CodeQuality.Analyzers --version 2.9.3'
+      arguments: '$(build.sourcesDirectory)\\OneWayServiceExample.Server package Microsoft.CodeQuality.Analyzers --version 2.9.3'
 
   - task: DotNetCoreCLI@2
     inputs:
@@ -52,8 +52,8 @@ jobs:
   - task: CodeAnalysis@1
     inputs:
       ruleset: 'All Rules'
-      buildDirectory: '$(build.sourcesDirectory)'
-      fileList: '$(build.sourcesDirectory)'
+      buildDirectory: 'OneWayServiceExample.Server\bin\Debug\'
+      fileList: 'OneWayServiceExample.Server.exe'
       outputFile: '$(build.sourcesDirectory)\codeanalysisresult.html'
       includeSummary: true
       logging: falsep
