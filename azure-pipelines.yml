@@ -13,8 +13,9 @@ jobs:
 
   - task: DotNetCoreCLI@2
     inputs:
-      command: 'new'
-      projects: '"Console Applicaiton"'
+      command: 'custom'
+      custom: 'new'
+      projects: '"Console Application"'
   
   - task: DotNetCoreCLI@2
     inputs:
