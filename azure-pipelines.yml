@@ -13,14 +13,14 @@ jobs:
 
   - task: DotNetCoreCLI@2
     inputs:
-      command: 'build'
-      projects: 'D:\\a\\1\\s\\OneWayServiceExample.Server'
+      command: 'new'
+      projects: '"Console Applicaiton"'
   
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
       custom: 'add'
-      arguments: '$(build.sourcesDirectory)\\OneWayServiceExample.Server package Microsoft.CodeQuality.Analyzers --version 2.9.3'
+      arguments: '$(build.sourcesDirectory) package Microsoft.CodeQuality.Analyzers --version 2.9.3'
 
   - task: DotNetCoreCLI@2
     inputs:
