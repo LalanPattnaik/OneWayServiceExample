@@ -5,8 +5,6 @@ jobs:
     vmImage: 'vs2017-win2016'
 
   steps:
-
-      
   - task: UseDotNet@2
     displayName: 'Use .NET Core sdk'
     inputs:
@@ -18,11 +16,6 @@ jobs:
       command: 'build'
       projects: 'D:\\a\\1\\s\\OneWayServiceExample.Server'
   
-  - task: PowerShell@2
-    inputs:
-      targetType: 'inline'
-      script: 'Install-Package Microsoft.CodeAnalysis.FxCopAnalyzers -Version 2.9.3'
-
   - task: DotNetCoreCLI@2
     inputs:
       command: 'custom'
